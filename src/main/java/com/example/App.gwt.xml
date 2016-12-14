@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD GWT 2.7.0//EN"
+        "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+
+<module rename-to='app'>
+
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.inject.Inject'/>
+
+    <!-- Other module inherits -->
+    <inherits name='com.sencha.gxt.ui.GXT' />
+
+    <!--Theme-->
+    <stylesheet src="reset.css"/>
+    <!--<inherits name='com.google.gwt.user.theme.clean.Clean'/>-->
+    <inherits name="com.sencha.gxt.theme.triton.Theme" />
+
+
+    <!--GWT Platform -->
+    <inherits name="com.gwtplatform.dispatch.rest.DispatchRest"/><!-- If you use MvpWithFormFactor or MvpWithEntryPoint to be before the MvpWith* inherits tag-->
+    <inherits name="com.gwtplatform.dispatch.rest.delegates.ResourceDelegate"/>
+    <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint"/>
+
+    <!--Use GWT Platform entry point -->
+    <extend-configuration-property name="gin.ginjector.modules" value="com.example.client.gin.ClientModule"/>
+
+    <inherits name="com.google.gwt.logging.Logging" />
+
+    <!-- Specify the paths for translatable code -->
+    <source path='client' />
+    <!--<source path='shared' />-->
+
+    <!-- Logging options: GXT -->
+
+    <!--https://docs.sencha.com/gxt/4.x/guides/concepts/Logging.html -->
+    <set-property name="gxt.logging.enabled" value="true" />
+
+    <!--Logging options: GWT -->
+    <set-property name="gwt.logging.enabled" value="TRUE"/>
+    <set-property name="gwt.logging.logLevel" value="INFO"/>
+    <!--<set-property name="gwt.logging.consoleHandler" value="ENABLED" />-->
+    <!--Dev mode specific - these only work when in dev mode-->
+    <set-property name="gwt.logging.systemHandler" value="ENABLED" />
+    <set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
+
+    <collapse-property name="user.agent" values="safari*, gecko*" />
+    <collapse-property name="user.agent" values="ie*" />
+
+    <set-configuration-property name="CssResource.enableGss" value="true"/>
+
+    <!-- allow Super Dev Mode (from GwtMaterialDesignDemo.gwt.xml)-->
+    <add-linker name="xsiframe"/>
+
+</module>

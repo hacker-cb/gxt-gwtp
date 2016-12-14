@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+>
+
+    <ui:import field="com.example.client.place.NameTokens.*"/>
+    <g:HTMLPanel>
+        <h1>Home page</h1>
+        <br></br>
+        <g:InlineHyperlink targetHistoryToken="{WINDOW}">Open window</g:InlineHyperlink>
+    </g:HTMLPanel>
+</ui:UiBinder>
